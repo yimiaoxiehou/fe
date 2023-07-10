@@ -20,16 +20,9 @@ import querystring from 'query-string';
 import _ from 'lodash';
 import NotFound from '@/pages/notFound';
 import Page403 from '@/pages/notFound/Page403';
-import Login from '@/pages/login';
-import Overview from '@/pages/login/overview';
-import LoginCallback from '@/pages/loginCallback';
-import LoginCallbackCAS from '@/pages/loginCallback/cas';
-import LoginCallbackOAuth from '@/pages/loginCallback/oauth';
 import AlertRules, { Add as AlertRuleAdd, Edit as AlertRuleEdit } from '@/pages/alertRules';
 import AlertRulesBuiltin, { Detail as AlertRulesBuiltinDetail } from '@/pages/alertRulesBuiltin';
-import Profile from '@/pages/account/profile';
 import { List as Dashboard, Detail as DashboardDetail, Share as DashboardShare } from '@/pages/dashboard';
-import Chart from '@/pages/chart';
 import Groups from '@/pages/user/groups';
 import Users from '@/pages/user/users';
 import Business from '@/pages/user/business';
@@ -74,17 +67,11 @@ export default function Content() {
   return (
     <div className={`content ${themeClassName}`}>
       <Switch>
-        <Route path='/overview' component={Overview} />
-        <Route path='/login' component={Login} exact />
-        <Route path='/callback' component={LoginCallback} exact />
-        <Route path='/callback/cas' component={LoginCallbackCAS} exact />
-        <Route path='/callback/oauth' component={LoginCallbackOAuth} exact />
         <Route path='/metric/explorer' component={MetricExplore} exact />
         <Route path='/log/explorer' component={LogExplore} exact />
         <Route path='/busi-groups' component={Business} />
         <Route path='/users' component={Users} />
         <Route path='/user-groups' component={Groups} />
-        <Route path='/account/profile/:tab' component={Profile} />
 
         <Route path='/dashboard/:id' exact component={DashboardDetail} />
         <Route path='/dashboards/:id' exact component={DashboardDetail} />
@@ -92,7 +79,6 @@ export default function Content() {
         <Route path='/dashboards' component={Dashboard} />
         <Route path='/dashboards-built-in' exact component={DashboardBuiltin} />
         <Route path='/dashboards-built-in/detail' exact component={DashboardBuiltinDetail} />
-        <Route path='/chart/:ids' component={Chart} />
 
         <Route exact path='/alert-rules/add/:bgid' component={AlertRuleAdd} />
         <Route exact path='/alert-rules/edit/:id' component={AlertRuleEdit} />
