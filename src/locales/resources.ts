@@ -14,21 +14,17 @@
  * limitations under the License.
  *
  */
-import * as datasource from './datasource';
 import * as common from './common';
 
 const resources = {
   en_US: {
     common: common.en_US,
-    datasource: datasource.en_US,
   },
   zh_CN: {
     common: common.zh_CN,
-    datasource: datasource.zh_CN,
   },
   zh_HK: {
     common: common.zh_HK,
-    datasource: datasource.zh_HK,
   },
 };
 
