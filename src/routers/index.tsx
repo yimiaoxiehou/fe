@@ -23,15 +23,9 @@ import Page403 from '@/pages/notFound/Page403';
 import AlertRules, { Add as AlertRuleAdd, Edit as AlertRuleEdit } from '@/pages/alertRules';
 import AlertRulesBuiltin, { Detail as AlertRulesBuiltinDetail } from '@/pages/alertRulesBuiltin';
 import { List as Dashboard, Detail as DashboardDetail, Share as DashboardShare } from '@/pages/dashboard';
-import Groups from '@/pages/user/groups';
-import Users from '@/pages/user/users';
-import Business from '@/pages/user/business';
 import { Metric as MetricExplore, Log as LogExplore } from '@/pages/explorer';
 import Targets from '@/pages/targets';
 import DashboardBuiltin, { Detail as DashboardBuiltinDetail } from '@/pages/dashboardBuiltin';
-import Permissions from '@/pages/permissions';
-// @ts-ignore
-import { Jobs as StrategyBrain } from 'plus:/datasource/anomaly';
 // @ts-ignore
 import plusLoader from 'plus:/utils/loader';
 import { dynamicPackages, Entry } from '@/utils';
@@ -69,9 +63,6 @@ export default function Content() {
       <Switch>
         <Route path='/metric/explorer' component={MetricExplore} exact />
         <Route path='/log/explorer' component={LogExplore} exact />
-        <Route path='/busi-groups' component={Business} />
-        <Route path='/users' component={Users} />
-        <Route path='/user-groups' component={Groups} />
 
         <Route path='/dashboard/:id' exact component={DashboardDetail} />
         <Route path='/dashboards/:id' exact component={DashboardDetail} />
@@ -85,11 +76,8 @@ export default function Content() {
         <Route exact path='/alert-rules' component={AlertRules} />
         <Route exact path='/alert-rules-built-in' component={AlertRulesBuiltin} />
         <Route exact path='/alert-rules-built-in/detail' component={AlertRulesBuiltinDetail} />
-        <Route exact path='/alert-rules/brain/:id' component={StrategyBrain} />
 
         <Route exact path='/targets' component={Targets} />
-        <Route exact path='/permissions' component={Permissions} />
-
         {lazyRoutes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route} />
         ))}
