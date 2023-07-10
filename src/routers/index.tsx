@@ -41,12 +41,10 @@ import Event from '@/pages/event';
 import EventDetail from '@/pages/event/detail';
 import historyEvents from '@/pages/historyEvents';
 import Targets from '@/pages/targets';
-import Demo from '@/pages/demo';
 import RecordingRule, { Add as RecordingRuleAdd, Edit as RecordingRuleEdit } from '@/pages/recordingRules';
 import TraceExplorer, { Dependencies as TraceDependencies } from '@/pages/traceCpt/Explorer';
 import DashboardBuiltin, { Detail as DashboardBuiltinDetail } from '@/pages/dashboardBuiltin';
 import Permissions from '@/pages/permissions';
-import IBEX from '@/pages/help/NotificationSettings/IBEX';
 // @ts-ignore
 import { Jobs as StrategyBrain } from 'plus:/datasource/anomaly';
 // @ts-ignore
@@ -84,7 +82,6 @@ export default function Content() {
   return (
     <div className={`content ${themeClassName}`}>
       <Switch>
-        <Route path='/demo' component={Demo} />
         <Route path='/overview' component={Overview} />
         <Route path='/login' component={Login} exact />
         <Route path='/callback' component={LoginCallback} exact />
@@ -128,8 +125,6 @@ export default function Content() {
         <Route exact path='/alert-cur-events/:eventId' component={EventDetail} />
         <Route exact path='/alert-his-events/:eventId' component={EventDetail} />
         <Route exact path='/targets' component={Targets} />
-
-        <Route exact path='/ibex-settings' component={IBEX} />
 
         <Route exact path='/trace/explorer' component={TraceExplorer} />
         <Route exact path='/trace/dependencies' component={TraceDependencies} />
