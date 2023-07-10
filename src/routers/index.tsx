@@ -34,15 +34,9 @@ import Groups from '@/pages/user/groups';
 import Users from '@/pages/user/users';
 import Business from '@/pages/user/business';
 import { Metric as MetricExplore, Log as LogExplore } from '@/pages/explorer';
-import ObjectExplore from '@/pages/monitor/object';
 import Shield, { Add as AddShield, Edit as ShieldEdit } from '@/pages/warning/shield';
 import Subscribe, { Add as SubscribeAdd, Edit as SubscribeEdit } from '@/pages/warning/subscribe';
-import Event from '@/pages/event';
-import EventDetail from '@/pages/event/detail';
-import historyEvents from '@/pages/historyEvents';
 import Targets from '@/pages/targets';
-import RecordingRule, { Add as RecordingRuleAdd, Edit as RecordingRuleEdit } from '@/pages/recordingRules';
-import TraceExplorer, { Dependencies as TraceDependencies } from '@/pages/traceCpt/Explorer';
 import DashboardBuiltin, { Detail as DashboardBuiltinDetail } from '@/pages/dashboardBuiltin';
 import Permissions from '@/pages/permissions';
 // @ts-ignore
@@ -89,7 +83,6 @@ export default function Content() {
         <Route path='/callback/oauth' component={LoginCallbackOAuth} exact />
         <Route path='/metric/explorer' component={MetricExplore} exact />
         <Route path='/log/explorer' component={LogExplore} exact />
-        <Route path='/object/explorer' component={ObjectExplore} exact />
         <Route path='/busi-groups' component={Business} />
         <Route path='/users' component={Users} />
         <Route path='/user-groups' component={Groups} />
@@ -116,19 +109,7 @@ export default function Content() {
         <Route exact path='/alert-subscribes/add' component={SubscribeAdd} />
         <Route exact path='/alert-subscribes/edit/:id' component={SubscribeEdit} />
 
-        <Route exact path='/recording-rules/:id?' component={RecordingRule} />
-        <Route exact path='/recording-rules/add/:group_id' component={RecordingRuleAdd} />
-        <Route exact path='/recording-rules/edit/:id' component={RecordingRuleEdit} />
-
-        <Route exact path='/alert-cur-events' component={Event} />
-        <Route exact path='/alert-his-events' component={historyEvents} />
-        <Route exact path='/alert-cur-events/:eventId' component={EventDetail} />
-        <Route exact path='/alert-his-events/:eventId' component={EventDetail} />
         <Route exact path='/targets' component={Targets} />
-
-        <Route exact path='/trace/explorer' component={TraceExplorer} />
-        <Route exact path='/trace/dependencies' component={TraceDependencies} />
-
         <Route exact path='/permissions' component={Permissions} />
 
         {lazyRoutes.map((route, i) => (
