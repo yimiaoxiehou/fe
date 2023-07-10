@@ -34,8 +34,6 @@ import Groups from '@/pages/user/groups';
 import Users from '@/pages/user/users';
 import Business from '@/pages/user/business';
 import { Metric as MetricExplore, Log as LogExplore } from '@/pages/explorer';
-import Shield, { Add as AddShield, Edit as ShieldEdit } from '@/pages/warning/shield';
-import Subscribe, { Add as SubscribeAdd, Edit as SubscribeEdit } from '@/pages/warning/subscribe';
 import Targets from '@/pages/targets';
 import DashboardBuiltin, { Detail as DashboardBuiltinDetail } from '@/pages/dashboardBuiltin';
 import Permissions from '@/pages/permissions';
@@ -102,12 +100,6 @@ export default function Content() {
         <Route exact path='/alert-rules-built-in' component={AlertRulesBuiltin} />
         <Route exact path='/alert-rules-built-in/detail' component={AlertRulesBuiltinDetail} />
         <Route exact path='/alert-rules/brain/:id' component={StrategyBrain} />
-        <Route exact path='/alert-mutes' component={Shield} />
-        <Route exact path='/alert-mutes/add/:from?' component={AddShield} />
-        <Route exact path='/alert-mutes/edit/:id' component={ShieldEdit} />
-        <Route exact path='/alert-subscribes' component={Subscribe} />
-        <Route exact path='/alert-subscribes/add' component={SubscribeAdd} />
-        <Route exact path='/alert-subscribes/edit/:id' component={SubscribeEdit} />
 
         <Route exact path='/targets' component={Targets} />
         <Route exact path='/permissions' component={Permissions} />
