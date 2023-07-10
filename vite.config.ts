@@ -49,23 +49,23 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/n9e-plus': {
-        target: 'http://10.206.16.17:17001/',
+        target: 'http://192.168.44.185:17000/',
         changeOrigin: true,
       },
       '/api/n9e/proxy': {
-        target: 'http://10.206.16.17:17001/',
+        target: 'http://192.168.44.185:17000/',
         changeOrigin: true,
       },
       '/api/n9e/datasource': {
-        target: 'http://10.206.16.17:17001/',
+        target: 'http://192.168.44.185:17000/',
         changeOrigin: true,
       },
       '/api/n9e': {
-        target: 'http://10.206.16.17:17001/',
+        target: 'http://192.168.44.185:17000/',
         changeOrigin: true,
       },
       '/api/fc-brain': {
-        target: 'http://10.206.16.17:28000/',
+        target: 'http://192.168.44.185:28000/',
         changeOrigin: true,
       },
     },

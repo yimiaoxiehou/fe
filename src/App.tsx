@@ -23,13 +23,10 @@ import enUS from 'antd/lib/locale/en_US';
 import 'antd/dist/antd.less';
 import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
-import TaskOutput from '@/pages/taskOutput';
-import TaskHostOutput from '@/pages/taskOutput/host';
 import { getAuthorizedDatasourceCates } from '@/components/AdvancedWrap';
 import { GetProfile } from '@/services/account';
 import { getBusiGroups, getDatasourceList, getDatasourceBriefList } from '@/services/common';
 import { getLicense } from '@/components/AdvancedWrap';
-import HeaderMenu from './components/menu';
 import Content from './routers';
 
 import './App.less';
@@ -176,10 +173,7 @@ function App() {
         <ConfigProvider locale={i18n.language == 'en_US' ? enUS : zhCN}>
           <Router>
             <Switch>
-              <Route exact path='/job-task/:busiId/output/:taskId/:outputType' component={TaskOutput} />
-              <Route exact path='/job-task/:busiId/output/:taskId/:host/:outputType' component={TaskHostOutput} />
               <>
-                <HeaderMenu />
                 <Content />
               </>
             </Switch>

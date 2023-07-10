@@ -42,26 +42,10 @@ import EventDetail from '@/pages/event/detail';
 import historyEvents from '@/pages/historyEvents';
 import Targets from '@/pages/targets';
 import Demo from '@/pages/demo';
-import TaskTpl from '@/pages/taskTpl';
-import TaskTplAdd from '@/pages/taskTpl/add';
-import TaskTplDetail from '@/pages/taskTpl/detail';
-import TaskTplModify from '@/pages/taskTpl/modify';
-import TaskTplClone from '@/pages/taskTpl/clone';
-import Task from '@/pages/task';
-import TaskAdd from '@/pages/task/add';
-import TaskResult from '@/pages/task/result';
-import TaskDetail from '@/pages/task/detail';
-import Version from '@/pages/help/version';
-import Servers from '@/pages/help/servers';
-import Datasource, { Form as DatasourceAdd } from '@/pages/datasource';
 import RecordingRule, { Add as RecordingRuleAdd, Edit as RecordingRuleEdit } from '@/pages/recordingRules';
 import TraceExplorer, { Dependencies as TraceDependencies } from '@/pages/traceCpt/Explorer';
 import DashboardBuiltin, { Detail as DashboardBuiltinDetail } from '@/pages/dashboardBuiltin';
 import Permissions from '@/pages/permissions';
-import SSOConfigs from '@/pages/help/SSOConfigs';
-import NotificationTpls from '@/pages/help/NotificationTpls';
-import NotificationSettings from '@/pages/help/NotificationSettings';
-import MigrateDashboards from '@/pages/help/migrate';
 import IBEX from '@/pages/help/NotificationSettings/IBEX';
 // @ts-ignore
 import { Jobs as StrategyBrain } from 'plus:/datasource/anomaly';
@@ -145,27 +129,7 @@ export default function Content() {
         <Route exact path='/alert-his-events/:eventId' component={EventDetail} />
         <Route exact path='/targets' component={Targets} />
 
-        <Route exact path='/job-tpls' component={TaskTpl} />
-        <Route exact path='/job-tpls/add' component={TaskTplAdd} />
-        <Route exact path='/job-tpls/add/task' component={TaskAdd} />
-        <Route exact path='/job-tpls/:id/detail' component={TaskTplDetail} />
-        <Route exact path='/job-tpls/:id/modify' component={TaskTplModify} />
-        <Route exact path='/job-tpls/:id/clone' component={TaskTplClone} />
-        <Route exact path='/job-tasks' component={Task} />
-        <Route exact path='/job-tasks/add' component={TaskAdd} />
-        <Route exact path='/job-tasks/:id/result' component={TaskResult} />
-        <Route exact path='/job-tasks/:id/detail' component={TaskDetail} />
         <Route exact path='/ibex-settings' component={IBEX} />
-
-        <Route exact path='/help/version' component={Version} />
-        <Route exact path='/help/servers' component={Servers} />
-        <Route exact path='/help/source' component={Datasource} />
-        <Route exact path='/help/source/:action/:type' component={DatasourceAdd} />
-        <Route exact path='/help/source/:action/:type/:id' component={DatasourceAdd} />
-        <Route exact path='/help/sso' component={SSOConfigs} />
-        <Route exact path='/help/notification-tpls' component={NotificationTpls} />
-        <Route exact path='/help/notification-settings' component={NotificationSettings} />
-        <Route exact path='/help/migrate' component={MigrateDashboards} />
 
         <Route exact path='/trace/explorer' component={TraceExplorer} />
         <Route exact path='/trace/dependencies' component={TraceDependencies} />
