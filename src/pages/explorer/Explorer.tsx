@@ -32,7 +32,6 @@ import { getDefaultDatasourceValue, setDefaultDatasourceValue } from '@/utils';
 import { CommonStateContext } from '@/App';
 import { DatasourceCateSelect } from '@/components/DatasourceSelect';
 import Prometheus from './Prometheus';
-import Elasticsearch from './Elasticsearch';
 // @ts-ignore
 import PlusExplorer from 'plus:/parcels/Explorer';
 import './index.less';
@@ -142,9 +141,7 @@ const Panel = ({ removePanel, id, type, defaultCate }: IPanelProps) => {
           {({ getFieldValue }) => {
             const datasourceCate = getFieldValue('datasourceCate');
             const datasourceValue = getFieldValue('datasourceValue');
-            if (datasourceCate === DatasourceCateEnum.elasticsearch) {
-              return <Elasticsearch key={datasourceValue} datasourceValue={datasourceValue} form={form} />;
-            } else if (datasourceCate === DatasourceCateEnum.prometheus) {
+            if (datasourceCate === DatasourceCateEnum.prometheus) {
               return <Prometheus key={datasourceValue} headerExtra={headerExtraRef.current} datasourceValue={datasourceValue} form={form} />;
             }
             return <PlusExplorer datasourceCate={datasourceCate} datasourceValue={datasourceValue} headerExtraRef={headerExtraRef} form={form} />;

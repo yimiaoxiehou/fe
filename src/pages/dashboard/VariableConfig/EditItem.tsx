@@ -20,7 +20,6 @@ import { QuestionCircleOutlined } from '@ant-design/icons';
 import _ from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { IRawTimeRange } from '@/components/TimeRangePicker';
-import IndexSelect from '@/pages/dashboard/Editor/QueryEditor/Elasticsearch/IndexSelect';
 import ClusterSelect from '@/pages/dashboard/Editor/QueryEditor/components/ClusterSelect';
 import { CommonStateContext } from '@/App';
 import { IVariable } from './definition';
@@ -175,19 +174,6 @@ function EditItem(props: IProps) {
                       <Col span={8}>
                         <ClusterSelect cate={datasourceCate} label={t('common:datasource.id')} name={['datasource', 'value']} datasourceVars={datasourceVars} />
                       </Col>
-                      {datasourceCate === 'elasticsearch' && (
-                        <>
-                          <Col span={8}>
-                            <Form.Item shouldUpdate={(prevValues, curValues) => prevValues?.datasource?.value !== curValues?.datasource?.value} noStyle>
-                              {({ getFieldValue }) => {
-                                let datasourceValue = getFieldValue(['datasource', 'value']);
-                                datasourceValue = replaceExpressionVars(datasourceValue as any, vars, vars.length, id);
-                                return <IndexSelect name={['config', 'index']} cate={datasourceCate} datasourceValue={datasourceValue} />;
-                              }}
-                            </Form.Item>
-                          </Col>
-                        </>
-                      )}
                     </Row>
                   );
                 }}

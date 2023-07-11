@@ -30,7 +30,6 @@ import { getDashboards, cloneDashboard, removeDashboards, getDashboard, updateDa
 import PageLayout from '@/components/pageLayout';
 import BlankBusinessPlaceholder from '@/components/BlankBusinessPlaceholder';
 import { CommonStateContext } from '@/App';
-import { BusinessGroup } from '@/pages/targets';
 import usePagination from '@/components/usePagination';
 import Header from './Header';
 import FormCpt from './Form';
@@ -66,12 +65,6 @@ export default function index() {
   return (
     <PageLayout title={t('title')} icon={<FundViewOutlined />}>
       <div style={{ display: 'flex' }}>
-        <BusinessGroup
-          curBusiId={busiId}
-          setCurBusiId={(id) => {
-            commonState.setCurBusiId(id);
-          }}
-        />
         {busiId ? (
           <div className='dashboards-v2'>
             <Header

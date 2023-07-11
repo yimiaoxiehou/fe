@@ -24,9 +24,6 @@ import { IVariable } from '../../VariableConfig/definition';
 import replaceExpressionBracket from '../utils/replaceExpressionBracket';
 import { getSerieName } from './utils';
 import prometheusQuery from './prometheus';
-import elasticsearchQuery from './elasticsearch';
-// @ts-ignore
-import plusDatasource from 'plus:/parcels/Dashboard/datasource';
 
 interface IProps {
   id?: string;
@@ -52,8 +49,6 @@ export default function usePrometheus(props: IProps) {
   const flag = useRef(false);
   const fetchQueryMap = {
     prometheus: prometheusQuery,
-    elasticsearch: elasticsearchQuery,
-    ...plusDatasource,
   };
   const { run: fetchData } = useDebounceFn(
     () => {

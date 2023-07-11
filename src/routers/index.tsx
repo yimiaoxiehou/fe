@@ -17,15 +17,9 @@
 import React from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import querystring from 'query-string';
-import _ from 'lodash';
 import NotFound from '@/pages/notFound';
 import Page403 from '@/pages/notFound/Page403';
-import AlertRules, { Add as AlertRuleAdd, Edit as AlertRuleEdit } from '@/pages/alertRules';
-import AlertRulesBuiltin, { Detail as AlertRulesBuiltinDetail } from '@/pages/alertRulesBuiltin';
 import { List as Dashboard, Detail as DashboardDetail, Share as DashboardShare } from '@/pages/dashboard';
-import { Metric as MetricExplore, Log as LogExplore } from '@/pages/explorer';
-import Targets from '@/pages/targets';
-import DashboardBuiltin, { Detail as DashboardBuiltinDetail } from '@/pages/dashboardBuiltin';
 // @ts-ignore
 import plusLoader from 'plus:/utils/loader';
 import { dynamicPackages, Entry } from '@/utils';
@@ -61,31 +55,12 @@ export default function Content() {
   return (
     <div className={`content ${themeClassName}`}>
       <Switch>
-        <Route path='/metric/explorer' component={MetricExplore} exact />
-        <Route path='/log/explorer' component={LogExplore} exact />
-
         <Route path='/dashboard/:id' exact component={DashboardDetail} />
         <Route path='/dashboards/:id' exact component={DashboardDetail} />
         <Route path='/dashboards/share/:id' component={DashboardShare} />
         <Route path='/dashboards' component={Dashboard} />
-        <Route path='/dashboards-built-in' exact component={DashboardBuiltin} />
-        <Route path='/dashboards-built-in/detail' exact component={DashboardBuiltinDetail} />
-
-        <Route exact path='/alert-rules/add/:bgid' component={AlertRuleAdd} />
-        <Route exact path='/alert-rules/edit/:id' component={AlertRuleEdit} />
-        <Route exact path='/alert-rules' component={AlertRules} />
-        <Route exact path='/alert-rules-built-in' component={AlertRulesBuiltin} />
-        <Route exact path='/alert-rules-built-in/detail' component={AlertRulesBuiltinDetail} />
-
-        <Route exact path='/targets' component={Targets} />
-        {lazyRoutes.map((route, i) => (
-          <RouteWithSubRoutes key={i} {...route} />
-        ))}
-        {_.map(plusLoader.routes, (route, i) => (
-          <RouteWithSubRoutes key={i} {...route} />
-        ))}
         <Route path='/' exact>
-          <Redirect to='/metric/explorer' />
+          <Redirect to='/dashboards' />
         </Route>
         <Route path='/403' component={Page403} />
         <Route path='/404' component={NotFound} />

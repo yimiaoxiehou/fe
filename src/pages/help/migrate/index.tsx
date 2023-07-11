@@ -5,7 +5,6 @@ import moment from 'moment';
 import _ from 'lodash';
 import semver from 'semver';
 import PageLayout from '@/components/pageLayout';
-import { BusinessGroup } from '@/pages/targets';
 import { CommonStateContext } from '@/App';
 import BlankBusinessPlaceholder from '@/components/BlankBusinessPlaceholder';
 import { getDashboards, getDashboard } from '@/services/dashboardV2';
@@ -57,12 +56,6 @@ export default function index() {
   return (
     <PageLayout title={t('title')}>
       <div style={{ display: 'flex' }}>
-        <BusinessGroup
-          curBusiId={busiId}
-          setCurBusiId={(id) => {
-            commonState.setCurBusiId(id);
-          }}
-        />
         {busiId ? (
           <div className='dashboards-v2'>
             <div style={{ marginBottom: 10 }}>
