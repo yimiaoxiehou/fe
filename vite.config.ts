@@ -95,7 +95,7 @@ export default defineConfig({
           'primary-color': '#2e60b1',
           'primary-background': '#F0ECF9',
           'disabled-color': 'rgba(0, 0, 0, 0.5)',
-          'tabs-ink-bar-color': 'linear-gradient(to right, #9F4CFC, #0019F4 )',
+          'tabs-ink-bar-color': 'linear-gradient(to right, #c0cfe8, #0019F4 )',
           'font-size-base': '12px',
           'menu-item-font-size': '14px',
           'radio-button-checked-bg': '#c0cfe8',
