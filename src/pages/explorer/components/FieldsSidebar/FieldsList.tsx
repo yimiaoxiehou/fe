@@ -51,7 +51,7 @@ export default function FieldsList(props: IProps) {
             {expanded ? <DownOutlined /> : <RightOutlined />} {t(`log.${type}`)}
           </span>
           <span>
-            <Tag color={fieldsSearch ? '#6C53B1' : ''}>{filteredFields.length}</Tag>
+            <Tag color={fieldsSearch ? '#2e60b1' : ''}>{filteredFields.length}</Tag>
           </span>
         </div>
         {expanded &&

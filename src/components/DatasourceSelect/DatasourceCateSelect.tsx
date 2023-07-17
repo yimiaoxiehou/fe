@@ -12,9 +12,9 @@ interface IProps extends SelectProps {
 export const ProSvg = ({ type = 'normal' }) => (
   <div
     style={{
-      border: `1px solid ${type === 'selected' ? '#fff' : '#6C53B1'}`,
+      border: `1px solid ${type === 'selected' ? '#fff' : '#2e60b1'}`,
       color: '#fff',
-      background: '#6C53B1',
+      background: '#2e60b1',
       display: 'inline-block',
       borderRadius: 2,
       padding: '2px 6px',

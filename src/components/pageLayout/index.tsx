@@ -45,26 +45,7 @@ const PageLayout: React.FC<IPageLayoutProps> = ({ icon, title, rightArea, introI
 
   const menu = (
     <Menu>
-      <Menu.Item
-        onClick={() => {
-          history.push('/account/profile/info');
-        }}
-      >
-        {t('profile')}
-      </Menu.Item>
-      <Menu.Item
-        onClick={() => {
-          Logout().then(() => {
-            localStorage.removeItem('access_token');
-            localStorage.removeItem('refresh_token');
-            localStorage.removeItem('curBusiId');
-            history.push('/login');
-          });
-        }}
-      >
-        {t('logout')}
-      </Menu.Item>
-    </Menu>
+     </Menu>
   );
 
   return (

@@ -2,7 +2,6 @@
 import { extend } from 'umi-request';
 import { notification } from 'antd';
 import _ from 'lodash';
-import { UpdateAccessToken } from '@/services/login';
 
 /** 异常处理程序，所有的error都被这里处理，页面无法感知具体error */
 const errorHandler = (error: Error): Response => {
@@ -112,20 +111,6 @@ request.interceptors.response.use(
     } else if (status === 401) {
       if (response.url.indexOf('/api/n9e/auth/refresh') > 0) {
         location.href = `/login${location.pathname != '/' ? '?redirect=' + location.pathname + location.search : ''}`;
-      } else {
-        localStorage.getItem('refresh_token')
-          ? UpdateAccessToken().then((res) => {
-              console.log('401 err', res);
-              if (res.err) {
-                location.href = `/login${location.pathname != '/' ? '?redirect=' + location.pathname + location.search : ''}`;
-              } else {
-                const { access_token, refresh_token } = res.dat;
-                localStorage.setItem('access_token', access_token);
-                localStorage.setItem('refresh_token', refresh_token);
-                location.href = `${location.pathname}${location.search}`;
-              }
-            })
-          : (location.href = `/login${location.pathname != '/' ? '?redirect=' + location.pathname + location.search : ''}`);
       }
     } else {
       return response

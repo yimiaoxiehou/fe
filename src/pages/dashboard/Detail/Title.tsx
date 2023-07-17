@@ -96,43 +96,6 @@ export default function Title(props: IProps) {
             value={range}
             onChange={setRange}
           />
-          {!isPreview && (
-            <Button
-              onClick={() => {
-                const newQuery = _.omit(query, ['viewMode', 'themeMode']);
-                if (!viewMode) {
-                  newQuery.viewMode = 'fullscreen';
-                }
-                history.replace({
-                  pathname: location.pathname,
-                  search: querystring.stringify(newQuery),
-                });
-                // TODO: 解决仪表盘 layout resize 问题
-                setTimeout(() => {
-                  window.dispatchEvent(new Event('resize'));
-                }, 500);
-              }}
-            >
-              {viewMode === 'fullscreen' ? t('exit_full_screen') : t('full_screen')}
-            </Button>
-          )}
-          {viewMode === 'fullscreen' && (
-            <Switch
-              checkedChildren='dark'
-              unCheckedChildren='light'
-              checked={themeMode === 'dark'}
-              onChange={(checked) => {
-                const newQuery = _.omit(query, ['themeMode']);
-                if (checked) {
-                  newQuery.themeMode = 'dark';
-                }
-                history.replace({
-                  pathname: location.pathname,
-                  search: querystring.stringify(newQuery),
-                });
-              }}
-            />
-          )}
         </Space>
       </div>
     </div>

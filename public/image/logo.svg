@@ -3,12 +3,12 @@
     <title>nightingale</title>
     <defs>
         <linearGradient x1="-1.78957223e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
-            <stop stop-color="#6C53B1" stop-opacity="0.08" offset="0%"></stop>
-            <stop stop-color="#6C53B1" stop-opacity="0.8" offset="100%"></stop>
+            <stop stop-color="#2e60b1" stop-opacity="0.08" offset="0%"></stop>
+            <stop stop-color="#2e60b1" stop-opacity="0.8" offset="100%"></stop>
         </linearGradient>
         <radialGradient cx="100%" cy="50%" fx="100%" fy="50%" r="100%" id="radialGradient-2">
-            <stop stop-color="#6C53B1" stop-opacity="0.4" offset="0%"></stop>
-            <stop stop-color="#6C53B1" offset="100%"></stop>
+            <stop stop-color="#2e60b1" stop-opacity="0.4" offset="0%"></stop>
+            <stop stop-color="#2e60b1" offset="100%"></stop>
         </radialGradient>
     </defs>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

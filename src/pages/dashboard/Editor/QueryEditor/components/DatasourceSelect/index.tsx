@@ -95,7 +95,7 @@ export default function index({ chartForm, variableConfig }) {
             {_.map(cates, (item) => (
               <Select.Option key={item.value} value={item.value}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  {item.graphPro ? <Icon component={ProSvg as any} style={{ color: '#6C53B1', fontSize: 14 }} /> : null}
+                  {item.graphPro ? <Icon component={ProSvg as any} style={{ color: '#2e60b1', fontSize: 14 }} /> : null}
                   {item.label}
                 </div>
               </Select.Option>
