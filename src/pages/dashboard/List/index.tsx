@@ -105,7 +105,7 @@ export default function index() {
                       {_.map(_.split(text, ' '), (tag, index) => {
                         return tag ? (
                           <Tag
-                            color='purple'
+                            color='geekblue'
                             key={index}
                             style={{
                               cursor: 'pointer',

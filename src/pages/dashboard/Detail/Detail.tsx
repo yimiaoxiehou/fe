@@ -33,7 +33,6 @@ import MigrationModal from '@/pages/help/migrate/MigrationModal';
 import VariableConfig, { IVariable } from '../VariableConfig';
 import { replaceExpressionVars } from '../VariableConfig/constant';
 import { ILink } from '../types';
-import DashboardLinks from '../DashboardLinks';
 import Panels from '../Panels';
 import Title from './Title';
 import { JSONParse } from '../utils';

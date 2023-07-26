@@ -96,6 +96,23 @@ export default function Title(props: IProps) {
             value={range}
             onChange={setRange}
           />
+          {viewMode === 'fullscreen' && (
+            <Switch
+              checkedChildren='dark'
+              unCheckedChildren='light'
+              checked={themeMode === 'dark'}
+              onChange={(checked) => {
+                const newQuery = _.omit(query, ['themeMode']);
+                if (checked) {
+                  newQuery.themeMode = 'dark';
+                }
+                history.replace({
+                  pathname: location.pathname,
+                  search: querystring.stringify(newQuery),
+                });
+              }}
+            />
+          )}
         </Space>
       </div>
     </div>

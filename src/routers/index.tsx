@@ -47,6 +47,9 @@ export default function Content() {
   let themeClassName = '';
   if (location.pathname.indexOf('/dashboard') === 0) {
     const query = querystring.parse(location.search);
+    query.themeMode = 'dark';
+    query.viewMode = 'fullscreen';
+    themeClassName = 'theme-dark';
     if (query?.viewMode === 'fullscreen' && query?.themeMode === 'dark') {
       themeClassName = 'theme-dark';
     }
