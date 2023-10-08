@@ -80,14 +80,14 @@ function Item(props) {
         <div
           className='renderer-bar-gauge-item-value-bg'
           style={{
-            backgroundColor: themeMode === 'dark' ? '#20222E' : '#F6F6F6',
+            backgroundColor: themeMode === 'dark' ? '#00143d' : '#F6F6F6',
           }}
         />
         <div
           ref={bgRef}
           className='renderer-bar-gauge-item-value-color-bg'
           style={{
-            color: themeMode === 'dark' ? '#fff' : '#20222E',
+            color: themeMode === 'dark' ? '#fff' : '#00143d',
             borderRight: `2px solid ${color}`,
             backgroundColor: Color(color)
               .alpha(displayMode === 'basic' ? 0.2 : 1)

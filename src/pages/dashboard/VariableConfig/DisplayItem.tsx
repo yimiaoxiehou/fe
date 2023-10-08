@@ -44,6 +44,7 @@ export default function DisplayItem(props: IProps) {
           <Select
             mode={multi ? 'tags' : undefined}
             style={{
+              backgroundColor: '#1a3668',
               width: '180px',
             }}
             maxTagCount='responsive'
@@ -116,6 +117,7 @@ export default function DisplayItem(props: IProps) {
         {type === 'datasource' ? (
           <Select
             style={{
+              backgroundColor: '#1a3668',
               width: '180px',
             }}
             maxTagCount='responsive'
